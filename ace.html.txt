@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE Diagnostic Center - Book Now on WhatsApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Define our color palette based on your photos */
+        :root {
+            --primary-blue: #1e40af; /* The deep blue from the flyer header */
+            --light-grey: #f1f5f9;  /* The subtle grey background from the flyer */
+            --text-dark: #1f2937;
+            --text-light: #ffffff;
+            --teal-accent: #0d9488;  /* A teal color inspired by your logo */
+            --hover-blue: #111827;  /* A darker blue for button hover effects */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-grey);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* The blue header part */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* A simplified text version of your logo */
+        .logo-box {
+            display: grid;
+            place-items: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 5px solid white;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .logo-text h1 {
+            color: white;
+            text-transform: uppercase;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            color: #93c5fd; /* a lighter blue from your logo gradient */
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        /* Hero / Headline area */
+        .hero {
+            background-color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* The photo overview section */
+        .about {
+            background-color: white;
+            padding: 60px 0;
+            margin-bottom: 20px;
+        }
+
+        .about h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .photo-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .photo-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .photo-card img {
+            max-width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* The services section */
+        .services {
+            padding: 60px 0;
+            margin-bottom: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .service-card .icon {
+            font-size: 40px;
+            color: var(--teal-accent);
+            margin-bottom: 15px;
+        }
+
+        .service-card h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* The core tests section */
+        .tests {
+            padding: 60px 0;
+        }
+
+        .tests h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        /* A simple search bar for tests */
+        .search-container {
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .test-box {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .test-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* The 'Book Now on WhatsApp' button style */
+        .book-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .book-button:hover {
+            background-color: var(--hover-blue);
+        }
+
+        .book-button .icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        /* Contact Us form at the bottom */
+        .contact {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 80px 0;
+            margin-top: 40px;
+        }
+
+        .contact h3 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-block {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .contact-block h4 {
+            color: #93c5fd;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .contact-block p {
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Category details on the card back */
+        .card-categories {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .card-categories h4 {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-categories p {
+            color: #93c5fd;
+        }
+
+        /* Minimalistic footer */
+        footer {
+            background-color: #111827;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-box">+</div>
+                <div class="logo-text">
+                    <h1>ACE</h1>
+                    <p>ACE Diagnostic Center</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>EXPERTISE & PRECISION</h2>
+            <p>Elevating your wellness journey with trusted medical expertise. General health checkups, 24-hour emergencies, and specialized tests.</p>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="container">
+            <h3>Diagnostic Center Overview</h3>
+            <p>Here are some photos of our diagnostic center.</p>
+            <div class="about-grid">
+                
+                <div class="photo-card">
+                    <h4>Front Entrance</h4>
+                    <img src="https://via.placeholder.com/400x180?text=Your+Center+Photo+Here" alt="Diagnostic center entrance photo">
+                </div>
+
+                <div class="photo-card">
+                    <h4>Reception Area</h4>
+                    <img src="https://via.placeholder.com/400x180?text=Your+Center+Photo+Here" alt="Diagnostic center reception photo">
+                </div>
+
+                <div class="photo-card">
+                    <h4>Lab Facilities</h4>
+                    <img src="https://via.placeholder.com/400x180?text=Your+Center+Photo+Here" alt="Diagnostic center lab photo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services container">
+        <h3>Our Core Medical Services</h3>
+        <p style="margin-bottom: 30px;">Medical help you can trust, when you need it most.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">&#10003;</div>
+                <h4>General Check-Up</h4>
+                <p>Ensure your overall health with routine check-ups.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#10003;</div>
+                <h4>24-Hour Emergency</h4>
+                <p>We are always available for urgent needs.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">&#10003;</div>
+                <h4>Comprehensive Health Packages</h4>
+                <p>Explore our multi-test packages like Kidney Profile, Vitamine Profile, and Master health checkup.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tests container" id="all-tests">
+        <h3>Complete Test List</h3>
+        <p style="margin-bottom: 30px;">Find the test you need and book it directly. The total list is comprehensively available here.</p>
+        
+        <div class="search-container">
+            <input type="text" id="test-search" onkeyup="filterTests()" placeholder="Search test name...">
+        </div>
+
+        <div class="test-grid" id="test-list-grid">
+        </div>
+    </div>
+
+    <div class="contact">
+        <div class="container">
+            <h3>Personal & Contact Details</h3>
+            <p style="margin-bottom: 30px; color: #93c5fd;">You can reach our lab technician directly for any inquiries or booking help.</p>
+            <div class="contact-info">
+                <div class="contact-block">
+                    <h4>Mohamed Mujahid</h4>
+                    <p>Medical Lab Technician</p>
+                </div>
+                
+                <div class="contact-block">
+                    <h4>Contact Us</h4>
+                    <p>Mobile: +91 7032085377</p>
+                    <p>Email: mohammedmujahed767@gmail.com</p>
+                </div>
+
+                <div class="contact-block">
+                    <h4>Locations</h4>
+                    <p>Suleman Nagar, Chintalmet,</p>
+                    <p>Attapur, Hyderabad</p>
+                </div>
+            </div>
+
+            <div class="card-categories">
+                <h4>Categories:</h4>
+                <p>Blood Tests, X-ray & ECG, Pathology, Imaging Services</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ACE Diagnostic Center. Expertise & Precision.</p>
+        </div>
+    </footer>
+
+    <script>
+        // The list of all your tests, copied exactly from image_3.png
+        // (You can add or remove tests directly from this list).
+        const testsArray = [
+            "GLUCOSE, RANDOM", "GLUCOSE, FASTING", "GLUCOSE, POST PRANDIAL (PP), 2 HOURS (POST MEAL)",
+            "GLUCOSE FASTING & PP", "HBA1C, GLYCATED HEMOGLOBIN", "RENAL PROFILE/RENAL FUNCTION TEST (RFT/KFT)",
+            "BLOOD UREA NITROGEN", "CREATININE, SERUM", "URIC ACID - SERUM", "ELECTROLYTES - SERUM",
+            "LIPID PROFILE", "BILIRUBIN SERUM - TOTAL/DIRECT/INDIRECT", "LIVER FUNCTION TEST (LFT)",
+            "CALCIUM, SERUM", "PHOSPHORUS, INORGANIC - SERUM", "AMYLASE - SERUM", "LIPASE - SERUM",
+            "GAMMA GLUTAMYL TRANFERASE (GGT)", "ESTRADIOL (E2)", "FERRITIN",
+            "FOLLICLE STIMULATING HORMONE (FSH)", "FREE T3 (FT3)", "FREE T4 (FT4)",
+            "LUTEINIZING HORMONE (LH)", "PROLACTIN", "PROSTATIC SPECIFIC ANTIGEN (PSA TOTAL)",
+            "PROGESTERONE", "TESTOSTERONE, TOTAL", "TOTAL BETA- HCG (TB-HCG)",
+            "VITAMIN B12", "VITAMIN D - 25 HYDROXY (D2+D3)", "THYROID PROFILE (TOTAL T3, TOTAL T4, TSH)",
+            "THYROID PROFILE- FREE (FT3, FT4, TSH)", "THYROID STIMULATING HORMONE (TSH), SERUM",
+            "CA -125", "INTERLEUKIN-6, IL-6", "COMPLETE URINE EXAMINATION",
+            "STOOL ROUTINE EXAMINATION", "SEMEN ANALYSIS (SEMINOGRAM)", "BLEEDING TIME (BT) AND CLOTTING TIME (CT)",
+            "COMPLETE BLOOD COUNT (CBC)", "HEMOGLOBIN", "HEMOGRAM", "PERIPHERAL SMEAR",
+            "PERIPHERAL SMEAR FOR MALARIAL PARASITE (MP)", "MALARIAL ANTIGEN ( VIVAX AND FALCIPARUM)",
+            "COOMBS TEST (DIRECT)", "COOMBS TEST (INDIRECT)", "RETICULOCYTE COUNT", "SICKLING TEST",
+            "ABSOLUTE EOSINOPHIL COUNT", "ERYTHROCYTE SEDIMENTATION RATE (ESR)", "PCV",
+            "ACTIVATED PARTIAL THROMBOPLASTIN TIME (APTT)", "PROTHROMBIN TIME (PT/INR)",
+            "HISTOPATHOLOGY EXAMINATION ( SMALL SPECIMEN )", "HISTOPATHOLOGY EXAMINATION ( MEDIUM SPECIMEN )",
+            "HISTOPATHOLOGY EXAMINATION ( LARGE SPECIMEN )", "HISTOPATHOLOGY EXAMINATION (EXTRA LARGE SPECIMEN )",
+            "FNAC/FNAB", "PAP SMEAR - CONVENTIONAL", "ACID FAST STAIN /AFB", "GRAM STAIN",
+            "CULTURE AND SENSITIVITY - AEROBIC (BLOOD)", "CULTURE AND SENSITIVITY URINE",
+            "HIV RAPID", "HBS AG SCREENING(RAPID)", "HCV Tri Dot", "(VDRL) RPR QUALITATIVE- SERUM",
+            "WIDAL TEST ( SLIDE METHOD )", "WIDAL TEST (TUBE METHOD)", "COVID 19"
+        ];
+
+        // This is your specific WhatsApp number (no spaces or '+' sign).
+        const whatsappNumber = "917032085377";
+
+        // This function builds the complete grid of tests when the page loads.
+        function generateTestList() {
+            const grid = document.getElementById('test-list-grid');
+            testsArray.forEach(testName => {
+                const testBox = document.createElement('div');
+                testBox.className = 'test-box';
+                testBox.innerHTML = `
+                    <p class="test-name">${testName}</p>
+                    <button class="book-button" onclick="bookTest('${testName}')">
+                        <span class="icon">&#128172;</span> Book Now
+                    </button>
+                `;
+                grid.appendChild(testBox);
+            });
+        }
+
+        // This is the core booking logic you requested.
+        function bookTest(testName) {
+            // This is the pre-filled message that Mohamed will see.
+            const message = `Hi ACE Diagnostic Center, I would like to book a ${testName} test. Please provide me with the tariff and booking details.`;
+            
+            // This encodes the message so it can be used in a link.
+            const encodedMessage = encodeURIComponent(message);
+            
+            // This builds the full link to your WhatsApp chat with the pre-filled message.
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // This opens the link in a new tab for the visitor.
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // This lets Mohamed search for specific tests quickly.
+        function filterTests() {
+            const input = document.getElementById('test-search');
+            const filter = input.value.toUpperCase();
+            const grid = document.getElementById('test-list-grid');
+            const boxes = grid.getElementsByClassName('test-box');
+
+            for (let i = 0; i < boxes.length; i++) {
+                const testNameParagraph = boxes[i].getElementsByClassName('test-name')[0];
+                const textValue = testNameParagraph.textContent || testNameParagraph.innerText;
+                if (textValue.toUpperCase().indexOf(filter) > -1) {
+                    boxes[i].style.display = ""; // Show it
+                } else {
+                    boxes[i].style.display = "none"; // Hide it
+                }
+            }
+        }
+
+        // Start everything when the page is ready.
+        window.onload = generateTestList;
+    </script>
+</body>
+</html>
